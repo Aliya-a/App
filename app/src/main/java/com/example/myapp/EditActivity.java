@@ -23,9 +23,8 @@ public class EditActivity extends AppCompatActivity {
 
     private EditText et_title;
     private EditText et_content;
-    //记录当前编辑的笔记对象（用于比对是否改变）
+
     private NoteInfo currentNote;
-    //记录是否是插入状态 （因为也可能是更新（编辑）状态）
     private boolean insertFlag = true;
 
     @Override
@@ -45,7 +44,6 @@ public class EditActivity extends AppCompatActivity {
             insertFlag = false;
         }
     }
-    //初始化视图
     private void initView(){
         btn_save = findViewById(R.id.btn_save);
         btn_return = findViewById(R.id.btn_return);
@@ -58,7 +56,7 @@ public class EditActivity extends AppCompatActivity {
         tv_now.setText(sdf.format(date));
 
     }
-    //设置监听器
+
     private void setListener(){
         btn_return.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -81,7 +79,7 @@ public class EditActivity extends AppCompatActivity {
             }
         });
     }
-    //保存笔记到数据库 判断是新建还是更新
+
     private void saveNote(){
         NoteDataBaseHelper dbHelper = com.example.myapp.MainActivity.getDbHelper();
 
@@ -95,7 +93,7 @@ public class EditActivity extends AppCompatActivity {
             Note.updateNote(dbHelper, Integer.parseInt(currentNote.getId()),values);
         }
     }
-    //重写手机上返回按键处理函数，如果更改了提示保存 否则直接返回主界面
+
     @Override
     public void onBackPressed() {
         boolean display = false;

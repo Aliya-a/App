@@ -49,7 +49,6 @@ public class MainActivity extends AppCompatActivity {
         mListAdapter = new ListAdapter(com.example.myapp.MainActivity.this,noteList);
         noteListView.setAdapter(mListAdapter);
     }
-    //设置监听器
     private void setListener(){
         addBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -99,7 +98,6 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
-    //从数据库中读取所有笔记 封装成List<NoteInfo>
     private void getNoteList(){
         noteList.clear();
         Cursor allNotes = Note.getAllNotes(dbHelper);
@@ -112,7 +110,6 @@ public class MainActivity extends AppCompatActivity {
             noteList.add(noteInfo);
         }
     }
-    //重写返回按钮处理事件
     @Override
     public void onBackPressed() {
         String title = "提示";
@@ -132,7 +129,6 @@ public class MainActivity extends AppCompatActivity {
                     }
                 }).create().show();
     }
-    //给其他类提供dbHelper
     public static NoteDataBaseHelper getDbHelper() {
         return dbHelper;
     }

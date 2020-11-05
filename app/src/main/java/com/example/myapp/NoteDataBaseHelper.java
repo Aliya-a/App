@@ -14,7 +14,6 @@ public class NoteDataBaseHelper extends SQLiteOpenHelper {
         //创建表
         public void onCreate( SQLiteDatabase db );
 
-        //更新表
         public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion );
     }
 
