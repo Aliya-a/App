@@ -51,10 +51,14 @@ public class EditActivity extends AppCompatActivity {
         et_content = findViewById(R.id.edit_content);
         et_title = findViewById(R.id.edit_title);
 
-        Date date = new Date();
-        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
-        tv_now.setText(sdf.format(date));
 
+    }
+    public static final String getTime(){
+
+        SimpleDateFormat simpleDateFormat=new SimpleDateFormat("yyyy年MM月dd日 HH:mm:ss");
+        Date date=new Date(System.currentTimeMillis());
+
+        return simpleDateFormat.format(date);
     }
 
     private void setListener(){
