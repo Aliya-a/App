@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">MyNoteBook</string>
+    <string name="app_name">记事本</string>
     <string name="title">记事本</string>
     <string name="btn_confirm">确定</string>
     <string name="btn_cancel">取消</string>
